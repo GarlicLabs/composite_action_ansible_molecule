@@ -1,0 +1,14 @@
+name: 'Molecule tests'
+description: 'Execute enviroment and execute molecule tests'
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello ${{ inputs.who-to-greet }}.
+      shell: bash
+    - id: random-number-generator
+      run: echo "random-number=$(echo $RANDOM)" 
+      shell: bash
+    - run: echo "${{ github.action_path }}"
+      shell: bash
+    - run: goodbye.sh
+      shell: bash
